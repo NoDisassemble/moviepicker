@@ -1,1 +1,102 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Kumbh Sans", sans-serif;
+  scroll-behavior: smooth;
+}
 
+body {
+  background-color: #d1cece;
+  display: flex;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+
+.navbar-container {
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  justify-content: center;
+  align-content: center;
+  height: 70px;
+  background-color: purple;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  width: 75vw;
+}
+
+.logo {
+  color: white;
+  margin-right: 200px;
+  font-size: 2rem;
+}
+
+.picker-button {
+  color: black;
+}
+
+button {
+  color: black;
+  border-radius: 50px;
+  padding: 1rem;
+}
+
+.result-box {
+  position: relative;
+  top: 20%;
+  display: flex;
+  height: 300px;
+  width: 250px;
+  background-color: purple;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.mst3000 {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 400px;
+  background-color: #d1cece;
+  bottom: 50px;
+}
+
+.footer-container {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  justify-content: center;
+  align-content: center;
+  height: 50px;
+  background-color: purple;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 75vw;
+}
