@@ -6,6 +6,13 @@
   scroll-behavior: smooth;
 }
 
+body {
+  background-image:url("./assets/2mockup.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -34,17 +41,6 @@
   justify-content: left;
   align-items: center;
   width: 75vw;
-}
-
-.background {
-    
-}
-
-body {
-  background-image:url("./assets/2mockup.png");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
 }
 
 .logo {
