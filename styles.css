@@ -10,10 +10,6 @@ body {
   background-color: #d1cece;
   display: flex;
   min-height: 100vh;
-  background-image: url('https://github.com/ItsChurr0s/moviepicker/blob/c3aa310eaa80142a7b88d424e4b16e087e5a15d5/assets/2mockup.png');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
 }
 
 .container {
