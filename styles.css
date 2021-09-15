@@ -6,12 +6,21 @@
   scroll-behavior: smooth;
 }
 
+
 /* body {
   background-image: url("./assets/2mockup.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
 } */
+=======
+body {
+  background-image:url("./assets/2mockup.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 
 .navbar-container {
   position: fixed;
@@ -88,7 +97,7 @@ button {
   justify-content: center;
   align-content: center;
   height: 50px;
-  background-color: purple;
+  background-color: #aa364d;
 }
 
 .footer {
