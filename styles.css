@@ -41,7 +41,7 @@
 }
 
 body {
-  background-image:url("https://itschurr0s.github.io/moviepicker/assets/2mockup.png");
+  background-image:url("../moviepicker/assets/2mockup.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
