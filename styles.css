@@ -37,16 +37,14 @@
 }
 
 .background {
-    background-image:url("https://itschurr0s.github.io/moviepicker/assets/2mockup.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+    
 }
 
 body {
-  background-color: #d1cece;
-  display: flex;
-  min-height: 100vh;
+  background-image:url("https://itschurr0s.github.io/moviepicker/assets/2mockup.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .logo {
