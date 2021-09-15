@@ -6,7 +6,8 @@
   scroll-behavior: smooth;
 }
 
-.bg {
+body {
+  background-image: url("./assets/2mockup.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -14,16 +15,69 @@
   left: 0;
 }
 
-.by-genre {
+.btn {
+  width: 55px;
+  height: 35px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn.by-genre {
+  position: absolute;
+  top: 290px;
+  left: 125px;
+}
+
+.btn.by-genre:hover {
   background-color: red;
 }
 
-area:hover {
-  color: red;
+.btn.by-actor {
+  position: absolute;
+  top: 365px;
+  left: 125px;
 }
 
-.by-genre:hover {
-  color: red;
+.btn.by-actor:hover {
+  background-color: red;
+}
+
+.btn.by-director {
+  position: absolute;
+  top: 439px;
+  left: 125px;
+}
+
+.btn.by-director:hover {
+  background-color: red;
+}
+
+.btn.surprise-me {
+  position: absolute;
+  top: 518px;
+  left: 125px;
+}
+
+.btn.surprise-me:hover {
+  background-color: red;
+}
+
+.btn-find-movie {
+  position: absolute;
+  top: 828px;
+  left: 140px;
+  width: 218px;
+  height: 80px;
+  border-radius: 16px;
+  background-color: red;
+  font-family: cursive;
+  font-weight: bold;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.btn-find-movie:hover {
+  background-color: rgb(245, 96, 96);
 }
 
 .result-box {
