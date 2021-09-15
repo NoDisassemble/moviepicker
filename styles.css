@@ -6,12 +6,6 @@
   scroll-behavior: smooth;
 }
 
-body {
-  background-color: #d1cece;
-  display: flex;
-  min-height: 100vh;
-}
-
 .container {
   display: flex;
   flex-direction: column;
