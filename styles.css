@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   font-family: "Kumbh Sans", sans-serif;
-  scroll-behavior: smooth;
+  outline: none;
 }
 
 body {
@@ -78,6 +78,29 @@ body {
 
 .btn-find-movie:hover {
   background-color: rgb(245, 96, 96);
+}
+
+.form-by-genre {
+  position: absolute;
+  top: 580px;
+  left: 145px;
+}
+
+select {
+  width: 205px;
+}
+
+select::-webkit-scrollbar {
+  display: none;
+}
+
+option {
+  font-size: 2rem;
+  font-family: cursive;
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 .result-box {
