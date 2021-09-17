@@ -84,24 +84,6 @@ body {
   background-color: red;
 }
 
-.btn-find-movie {
-  position: absolute;
-  top: 828px;
-  left: 140px;
-  width: 218px;
-  height: 80px;
-  border-radius: 16px;
-  background-color: red;
-  font-family: cursive;
-  font-weight: bold;
-  font-size: 30px;
-  cursor: pointer;
-}
-
-.btn-find-movie:hover {
-  background-color: rgb(245, 96, 96);
-}
-
 .form-by-genre {
   position: absolute;
   display: none;
@@ -119,7 +101,6 @@ select::-webkit-scrollbar {
 
 option {
   font-size: 2rem;
-  font-family: cursive;
 }
 
 input {
@@ -132,6 +113,23 @@ input {
   width: 250px;
   height: 50px;
   border-radius: 8px;
+}
+
+.btn-find-movie {
+  position: absolute;
+  top: 828px;
+  left: 140px;
+  width: 218px;
+  height: 80px;
+  border-radius: 16px;
+  background-color: red;
+  font-weight: bold;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.btn-find-movie:hover {
+  background-color: rgb(245, 96, 96);
 }
 
 .result-box {
