@@ -8,10 +8,14 @@
 </head>
     
 <body>
+    <!-- Remote -->
+    <div class="remote">
+        <img src="./assets/remote.png">
+    </div>
     <!-- Buttons -->
     <button id="by-genre" class="btn by-genre" onClick="ShowHideGenre()"></button>
-    <button id="by-actor" class="btn by-actor"></button>
-    <button id="by-director" class="btn by-director"></button>
+    <button id="by-actor" class="btn by-actor" onClick="ShowHideActor()"></button>
+    <button id="by-director" class="btn by-director" onClick="ShowHideDirector()"></button>
     <button id="surprise-me" class="btn surprise-me"></button>
     <button id="find-movie" class="btn-find-movie">FIND MOVIE</button>
     <!-- Genre Forms -->
@@ -29,15 +33,13 @@
             <option value="">???</option>
         </select>
     </form>
-    <!-- Actor Forms -->
-    <form>
-
-    </form>
-    <!-- Director Forms -->
-    <form>
-
-    </form>
+    <!-- Actor Search -->
+    <input id="actor-search" type="text" placeholder="Search..."></input>
+    <!-- Director Search -->
+    <input id="director-search" type="text" placeholder="Search..."></input>
+    <!-- Result Box -->
     <div class="result-box"></div>
+    <!-- Footer -->
         <!-- <div class="footer-container">
             <div class="footer">Footer</div>
         </div> -->
