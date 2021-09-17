@@ -10,20 +10,20 @@ function ShowHideGenre() {
 
 // Show & hide actor search
 function ShowHideActor() {
-    let genreToggle = document.getElementById("actor-search");
-    if (genreToggle.style.display === "block") {
-        genreToggle.style.display = "none";
+    let actorToggle = document.getElementById("actor-search");
+    if (actorToggle.style.display === "block") {
+        actorToggle.style.display = "none";
     } else {
-        genreToggle.style.display = "block";
+        actorToggle.style.display = "block";
     }
 }
 
 // Show & hide director search
 function ShowHideDirector() {
-    let genreToggle = document.getElementById("director-search");
-    if (genreToggle.style.display === "block") {
-        genreToggle.style.display = "none";
+    let directorToggle = document.getElementById("director-search");
+    if (directorToggle.style.display === "block") {
+        directorToggle.style.display = "none";
     } else {
-        genreToggle.style.display = "block";
+        directorToggle.style.display = "block";
     }
 }
