@@ -138,13 +138,26 @@ input {
   top: 350px;
   left: 840px;
   display: flex;
+  flex-direction: column;
   height: 405px;
   width: 585px;
   border-radius: 10px;
-  background-color: purple;
+  padding: 20px;
+  background-color: black;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: rgb(231, 226, 226);
+  overflow: auto;
+}
+
+.movie-title {
+  font-weight: bold;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.movie-overview {
+  font-size: 1rem;
 }
 
 .footer-container {

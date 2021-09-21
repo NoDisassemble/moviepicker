@@ -17,7 +17,7 @@
     <button id="by-actor" class="btn by-actor" onClick="ShowHideActor()"></button>
     <button id="by-director" class="btn by-director" onClick="ShowHideDirector()"></button>
     <button id="surprise-me" class="btn surprise-me"></button>
-    <button id="find-movie" class="btn-find-movie">FIND MOVIE</button>
+    <button id="find-movie" class="btn-find-movie" onClick="FetchSomething()">FIND MOVIE</button>
     <!-- Genre Forms -->
     <form id="form-by-genre" class="form-by-genre">
         <select name="form-by-genre" size="6">
@@ -38,11 +38,10 @@
     <!-- Director Search -->
     <input id="director-search" type="text" placeholder="By Director"></input>
     <!-- Result Box -->
-    <div class="result-box"></div>
-    <!-- Footer -->
-        <!-- <div class="footer-container">
-            <div class="footer">Footer</div>
-        </div> -->
+    <div class="result-box">
+    <div id="returnMovie" class="movie-title">Movie</div>
+        <div id="returnOverview" class="movie-overview">Overview</div>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>

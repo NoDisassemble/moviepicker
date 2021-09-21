@@ -1,6 +1,9 @@
 let genreToggle = document.getElementById("form-by-genre");
 let actorToggle = document.getElementById("actor-search");
 let directorToggle = document.getElementById("director-search");
+let title = document.getElementById("returnMovie");
+let overview = document.getElementById("returnOverview");
+
 
 const resettableElements = [
     genreToggle,
@@ -32,4 +35,20 @@ function ShowHideActor() {
 function ShowHideDirector() {
     let directorToggle = document.getElementById("director-search");
     toggleElement(directorToggle);
+}
+
+// Random number generator for movie ID
+const randomMovie = Math.floor(Math.random() * 400000) + 1;
+
+// Fetch something
+async function FetchSomething() {
+    const response = await fetch(`https://api.themoviedb.org/3/movie/${randomMovie}?api_key=e4fc096b1f7f3fbf48013349c7456fef`);
+    const data = await response.json();
+    title = data.title;
+    overview = data.overview;
+    console.log(data);
+    title = document.getElementById("returnMovie").innerHTML = title;
+    overview = document.getElementById("returnOverview").innerHTML = overview;
+    console.log(title);
+    return title;
 }
