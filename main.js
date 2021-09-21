@@ -50,8 +50,8 @@ function SurpriseMe() {
 async function FindMovie() {
     const response = await fetch(`https://api.themoviedb.org/3/movie/${randomId}?api_key=e4fc096b1f7f3fbf48013349c7456fef`);
     const data = await response.json();
-    if (data.success = false) {
-
+    if (data && data.success === false) {
+        return randomId;
     } else {
         title = data.title;
         overview = data.overview;
