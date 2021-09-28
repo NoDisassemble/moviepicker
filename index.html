@@ -6,7 +6,6 @@
     <title>Movie Picker</title>
     <link rel="stylesheet" href="styles.css"> 
 </head>
-    
 <body>
     <!-- Remote -->
     <div class="remote">
@@ -20,17 +19,26 @@
     <button id="find-movie" class="btn-find-movie" onClick="FindMovie()">FIND MOVIE</button>
     <!-- Genre Forms -->
     <form id="form-by-genre" class="form-by-genre">
-        <select name="form-by-genre" size="6">
-            <option value="Action">Action</option>
-            <option value="Comedy">Comedy</option>
-            <option value="Drama">Drama</option>
-            <option value="Horror">Horror</option>
-            <option value="Sci-Fi">Sci-Fi</option>
-            <option value="Thriller">Thriller</option>
-            <option value="">???</option>
-            <option value="">???</option>
-            <option value="">???</option>
-            <option value="">???</option>
+        <select id="genre-option" name="form-by-genre" size="6" onchange="getGenre(this)">
+            <option id="28" value="Action">Action</option>
+            <option id="12" value="Adventure">Adventure</option>
+            <option id="16" value="Animation">Animation</option>
+            <option id="35" value="Comedy">Comedy</option>
+            <option id="80" value="Crime">Crime</option>
+            <option id="99" value="Documentary">Documentary</option>
+            <option id="18" value="Drama">Drama</option>
+            <option id="10751" value="Family">Family</option>
+            <option id="14" value="Fantasy">Fantasy</option>
+            <option id="36" value="History">History</option>
+            <option id="27" value="Horror">Horror</option>
+            <option id="10402" value="Music">Music</option>
+            <option id="9648" value="Mystery">Mystery</option>
+            <option id="10749" value="Romance">Romance</option>
+            <option id="878" value="Sci-Fi">Sci-Fi</option>
+            <option id="10770" value="TV Movie">TV Movie</option>
+            <option id="53" value="Thriller">Thriller</option>
+            <option id="10752" value="War">War</option>
+            <option id="37" value="Western">Western</option>
         </select>
     </form>
     <!-- Actor Search -->
@@ -42,8 +50,15 @@
     <!-- Result Box -->
     <div class="result-box">
     <div id="returnMovie" class="movie-title">Movie</div>
-        <div id="returnOverview" class="movie-overview">...</div>
-    </div>
+        <div id="returnOverview" class="movie-overview">Description</div>
+        <div class="movie-info">
+            <div>Genre(s)
+            <p id="returnGenre"></p>
+            </div>
+            <div>Year
+            <p id="returnYear"></p>
+            </div>
+        </div>
     <script src="main.js"></script>
 </body>
 </html>

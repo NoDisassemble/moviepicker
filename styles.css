@@ -158,24 +158,14 @@ input {
 
 .movie-overview {
   font-size: 1rem;
+  margin-bottom: 20px;
 }
 
-.footer-container {
-  position: fixed;
-  bottom: 0;
+.movie-info {
   display: flex;
   flex-direction: row;
-  width: 100vw;
-  justify-content: center;
-  align-content: center;
-  height: 50px;
-  background-color: purple;
-}
-
-.footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 75vw;
+  width: 100%;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: rgb(192, 189, 189);
 }
