@@ -11,6 +11,19 @@
     <div class="remote">
         <img src="./assets/remote.png">
     </div>
+    <!-- TV -->
+    <div class="tv">
+        <div id="returnMovie" class="movie-title">Movie</div>
+            <div id="returnOverview" class="movie-overview">Description</div>
+            <div class="movie-info">
+                <div>Genre(s)
+                    <p id="returnGenre"></p>
+                </div>
+                <div>Year
+                    <p id="returnYear"></p>
+                </div>
+            </div>
+    </div>
     <!-- Buttons -->
     <button id="by-genre" class="btn by-genre" onClick="ShowHideGenre()"></button>
     <button id="by-actor" class="btn by-actor" onClick="ShowHideActor()"></button>
@@ -19,17 +32,15 @@
     <button id="find-movie" class="btn-find-movie" onClick="FindMovie()">FIND MOVIE</button>
     <!-- Genre Forms -->
     <div id="form-by-genre" class="form-by-genre">
-        <select id="genre-option" name="form-by-genre" size="6" onchange="getGenre(this)">
+        <select id="genre-option" name="form-by-genre" size="6" onchange="getGenre(this)"></select>
     </div>
     <!-- Actor Search -->
-    <input id="actor-search" type="text" placeholder="By Actor"></input>
+    <input id="actor-search" type="text" placeholder="By Actor" onBlur="getActor()"></input>
 
     <!-- Director Search -->
     <input id="director-search" type="text" placeholder="By Director"></input>
 
     <!-- Result Box -->
-    <script src="main.js"></script>
-
     <template id="result-box-template">
         <div id="result-box" class="result-box">
             <div id="returnMovie" class="movie-title">Movie</div>
@@ -44,5 +55,6 @@
             </div>
         </div>
     </template>
+<script src="main.js"></script>
 </body>
 </html>

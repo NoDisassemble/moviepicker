@@ -79,12 +79,10 @@ const GENRES = [
 
 function initialLoad() {
     const genreSelector = document.getElementById('genre-option');
-
     GENRES.forEach((genre) => {
         const option = document.createElement('option');
         option.setAttribute('value', genre.value);
         option.innerText = genre.displayText;
-
         genreSelector.appendChild(option);
     });
 }
@@ -98,7 +96,7 @@ const directorToggle = document.getElementById("director-search");
 const surpriseToggle = document.getElementById("surprise-me");
 
 // when variables can have mutable values, use let
-let url, genreId, page, randomId;
+let url, genreId, page, randomId, actor;
 
 const resettableElements = [
     genreToggle,
@@ -134,27 +132,37 @@ function getGenre(selectedGenre) {
     genreId = selectedGenre.value;
     page = Math.floor(Math.random() * 500) + 1;
     url = `https://api.themoviedb.org/3/discover/movie?api_key=e4fc096b1f7f3fbf48013349c7456fef&language=en-US&page=${page}&include_adult=false&with_genres=${genreId}`;
+    console.log("Genre Id: " + selectedGenre.value);
+    console.log("Page: " + page);
+    console.log(url);
 }
 
 
 // ------------------------ Fecth by Actor
-
+function getActor() {
+    actor = document.getElementById("actor-search").value;
+    console.log("Actor: " + actor);
+    url = `https://api.themoviedb.org/3/search/person?api_key=e4fc096b1f7f3fbf48013349c7456fef&query=${actor}`;
+    console.log(url);
+}
 
 // ------------------------ Fetch by Director
 
 
 // ------------------------ Surprise Me
-// Generate random id
 function SurpriseMe() {
     toggleElement(surpriseToggle);
-    url = `https://api.themoviedb.org/3/discover/movie?api_key=e4fc096b1f7f3fbf48013349c7456fef`;
-    // url = `https://api.themoviedb.org/3/movie/${randomId}?api_key=e4fc096b1f7f3fbf48013349c7456fef`;
+    page = Math.floor(Math.random() * 500) + 1;
+    url = `https://api.themoviedb.org/3/discover/movie?api_key=e4fc096b1f7f3fbf48013349c7456fef&page=${page}`;
+    console.log(url);
+    console.log("Page: " + page);
 }
 
 function getGenresFromMovie(movie) {
     return GENRES.reduce((collector, genre) => {
         if (movie.genre_ids.includes(genre.value)) {
             collector.push(genre.displayText);
+            console.log(genre.displayText);
         }
 
         return collector;
@@ -185,8 +193,12 @@ async function FindMovie() {
         const data = await response.json();
         const randomIndex = Math.floor(Math.random() * data.results.length);
         const randomlySelectedMovie = data.results[randomIndex];
-
         displayMovieInformation(randomlySelectedMovie);
+        console.log(data.results);
+        console.log(data.results[randomIndex]);
+        console.log("Title: " + randomlySelectedMovie.title);
+        console.log("Genres: " + (getGenresFromMovie).genre);
+        console.log("Release Date: " + randomlySelectedMovie.release_date);
     } catch (error) {
         console.log(error);
     }
