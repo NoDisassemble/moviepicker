@@ -96,7 +96,7 @@ const directorToggle = document.getElementById("director-search");
 const surpriseToggle = document.getElementById("surprise-me");
 
 // when variables can have mutable values, use let
-let url, genreId, page, randomId, actor;
+let url, genreId, page, randomId, actor, poster;
 
 const resettableElements = [
     genreToggle,
@@ -131,7 +131,7 @@ function ShowHideDirector() {
 function getGenre(selectedGenre) {
     genreId = selectedGenre.value;
     page = Math.floor(Math.random() * 500) + 1;
-    url = `https://api.themoviedb.org/3/discover/movie?api_key=e4fc096b1f7f3fbf48013349c7456fef&language=en-US&page=${page}&include_adult=false&with_genres=${genreId}`;
+    url = `https://api.themoviedb.org/3/discover/movie?api_key=e4fc096b1f7f3fbf48013349c7456fef&page=${page}&with_genres=${genreId}`;
     console.log("Genre Id: " + selectedGenre.value);
     console.log("Page: " + page);
     console.log(url);
@@ -169,6 +169,12 @@ function getGenresFromMovie(movie) {
     }, []).join(', ');
 }
 
+function getBackdrop(backdrop) {
+    poster = `https://image.tmdb.org/t/p/w500${backdrop}`;
+    // document.getElementById("backdrop").src = poster;
+    console.log("Poster: " + poster);
+}
+
 function displayMovieInformation(movie) {
     const oldResultBox = document.querySelector('#result-box');
     if (oldResultBox) {
@@ -193,12 +199,16 @@ async function FindMovie() {
         const data = await response.json();
         const randomIndex = Math.floor(Math.random() * data.results.length);
         const randomlySelectedMovie = data.results[randomIndex];
+        getBackdrop(randomlySelectedMovie.backdrop_path);
         displayMovieInformation(randomlySelectedMovie);
         console.log(data.results);
         console.log(data.results[randomIndex]);
         console.log("Title: " + randomlySelectedMovie.title);
+        console.log("Description: " + randomlySelectedMovie.overview);
         console.log("Genres: " + (getGenresFromMovie).genre);
         console.log("Release Date: " + randomlySelectedMovie.release_date);
+        console.log("Backdrop: " + randomlySelectedMovie.backdrop_path);
+        console.log("Poster Url: " + (getBackdrop).poster);
     } catch (error) {
         console.log(error);
     }
