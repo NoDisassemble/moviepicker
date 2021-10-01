@@ -152,19 +152,18 @@ input {
 
 .backdrop {
   position: absolute;
-  top: 350px;
-  left: 840px;
   display: flex;
   flex-direction: column;
   height: 405px;
   width: 585px;
   border-radius: 10px;
   padding: 20px;
-  background-color: black;
   justify-content: center;
   align-items: center;
+  background-color: black;
   color: rgb(231, 226, 226);
-  overflow: auto;
+  z-index: -1;
+  overflow: hide;
 }
 
 .result-box {
