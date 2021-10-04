@@ -13,7 +13,7 @@
     </div>
     <!-- TV -->
     <div class="tv">
-        <div id="returnMovie" class="movie-title">Movie</div>
+        <!-- <div id="returnMovie" class="movie-title">Movie</div>
             <div id="returnOverview" class="movie-overview">Description</div>
             <div class="movie-info">
                 <div>Genre(s)
@@ -22,7 +22,7 @@
                 <div>Year
                     <p id="returnYear"></p>
                 </div>
-            </div>
+            </div> -->
     </div>
     <!-- Buttons -->
     <button id="by-genre" class="btn by-genre" onClick="ShowHideGenre()"></button>
@@ -38,14 +38,13 @@
     <input id="actor-search" type="text" placeholder="By Actor" onBlur="getActor()"></input>
 
     <!-- Director Search -->
-    <input id="director-search" type="text" placeholder="By Director"></input>
+    <input id="director-search" type="text" placeholder="By Director" onBlur="getDirector()"></input>
 
     <!-- Result Box -->
     <template id="result-box-template">
         <div id="result-box" class="result-box">
-            <div class="backdrop">
-                <img id="backdrop" src="">
-            </div>
+                <div id="backdropDiv" class="backdropImg"></div>
+                <div class="imgOverlay"></div>
             <div id="returnMovie" class="movie-title">Movie</div>
             <div id="returnOverview" class="movie-overview">Description</div>
             <div class="movie-info">

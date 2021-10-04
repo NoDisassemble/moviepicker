@@ -147,6 +147,12 @@ function getActor() {
 }
 
 // ------------------------ Fetch by Director
+function getDirector() {
+    director = document.getElementById("director-search").value;
+    console.log("Director: " + director);
+    url = `https://api.themoviedb.org/3/search/person?api_key=e4fc096b1f7f3fbf48013349c7456fef&query=${director}`;
+    console.log(url);
+}
 
 
 // ------------------------ Surprise Me
@@ -170,9 +176,15 @@ function getGenresFromMovie(movie) {
 }
 
 function getBackdrop(backdrop) {
-    poster = `https://image.tmdb.org/t/p/w500${backdrop}`;
-    // document.getElementById("backdrop").src = poster;
-    console.log("Poster: " + poster);
+    backdropURL = `https://image.tmdb.org/t/p/w500${backdrop}`;
+    if (!backdropURL.ok) {
+        document.getElementById("backdropDiv").innerHTML = "No Image Available";
+    }
+    backdropIMG = document.createElement('img');
+    backdropIMG.src = backdropURL
+    backdropDiv = document.getElementById("backdropDiv");
+    backdropDiv.appendChild(backdropIMG)
+    console.log("Backdrop Url: " + backdropURL);
 }
 
 function displayMovieInformation(movie) {
@@ -199,8 +211,8 @@ async function FindMovie() {
         const data = await response.json();
         const randomIndex = Math.floor(Math.random() * data.results.length);
         const randomlySelectedMovie = data.results[randomIndex];
-        getBackdrop(randomlySelectedMovie.backdrop_path);
         displayMovieInformation(randomlySelectedMovie);
+        getBackdrop(randomlySelectedMovie.backdrop_path);
         console.log(data.results);
         console.log(data.results[randomIndex]);
         console.log("Title: " + randomlySelectedMovie.title);
@@ -208,7 +220,7 @@ async function FindMovie() {
         console.log("Genres: " + (getGenresFromMovie).genre);
         console.log("Release Date: " + randomlySelectedMovie.release_date);
         console.log("Backdrop: " + randomlySelectedMovie.backdrop_path);
-        console.log("Poster Url: " + (getBackdrop).poster);
+        console.log("Backdrop Url: " + (getBackdrop).poster);
     } catch (error) {
         console.log(error);
     }
