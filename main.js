@@ -96,7 +96,7 @@ const directorToggle = document.getElementById("director-search");
 const surpriseToggle = document.getElementById("surprise-me");
 
 // when variables can have mutable values, use let
-let url, genreId, page, randomId, actor, poster;
+let url, genreId, page, randomId, poster;
 
 const resettableElements = [
     genreToggle,
@@ -142,7 +142,12 @@ function getGenre(selectedGenre) {
 function getActor() {
     actor = document.getElementById("actor-search").value;
     console.log("Actor: " + actor);
-    url = `https://api.themoviedb.org/3/search/person?api_key=e4fc096b1f7f3fbf48013349c7456fef&query=${actor}`;
+    actorURL = fetch(`https://api.themoviedb.org/3/search/person?api_key=e4fc096b1f7f3fbf48013349c7456fef&query=${actor}`);
+    actorData = actorURL.json();
+    movieId = actorData.id;
+    url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=e4fc096b1f7f3fbf48013349c7456fef`;
+    console.log(actorURL);
+    console.log(movieId);
     console.log(url);
 }
 
