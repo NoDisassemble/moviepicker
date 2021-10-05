@@ -138,17 +138,17 @@ function getGenre(selectedGenre) {
 }
 
 
-// ------------------------ Fecth by Actor
-function getActor() {
+// ------------------------ Fetch by Actor
+async function getActor() {
     actor = document.getElementById("actor-search").value;
-    console.log("Actor: " + actor);
-    actorURL = fetch(`https://api.themoviedb.org/3/search/person?api_key=e4fc096b1f7f3fbf48013349c7456fef&query=${actor}`);
-    actorData = actorURL.json();
-    movieId = actorData.id;
-    url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=e4fc096b1f7f3fbf48013349c7456fef`;
-    console.log(actorURL);
-    console.log(movieId);
-    console.log(url);
+    actorURL = await fetch(`https://api.themoviedb.org/3/search/person?api_key=e4fc096b1f7f3fbf48013349c7456fef&query=${actor}`);
+    actorData = await actorURL.json();
+
+    if (actorData && actorData.results && actorData.results.length > 0) {
+        const randomlySelectedMovie = getRandomMovieFromList(actorData.results[0].known_for);
+
+        displayMovieInformation(randomlySelectedMovie);
+    }
 }
 
 // ------------------------ Fetch by Director
@@ -194,19 +194,29 @@ function getBackdrop(backdrop) {
 
 function displayMovieInformation(movie) {
     const oldResultBox = document.querySelector('#result-box');
+
     if (oldResultBox) {
         document.body.removeChild(oldResultBox);
     }
+
     const template = document.querySelector('#result-box-template');
 
-    template.content.querySelector('.movie-title').innerText = movie.title;
+    template.content.querySelector('.movie-title').innerText = movie.title || movie.name;
     template.content.querySelector('.movie-overview').innerText = movie.overview;
     template.content.querySelector('#returnGenre').innerText = getGenresFromMovie(movie);
     template.content.querySelector('#returnYear').innerText = movie.release_date;
+    template.content.querySelector('#backdropImg').src = `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`;
 
     const clone = document.importNode(template.content, true);
 
     document.body.appendChild(clone);
+}
+
+function getRandomMovieFromList(movies) {
+    const randomIndex = Math.floor(Math.random() * movies.length);
+    const randomlySelectedMovie = movies[randomIndex];
+
+    return randomlySelectedMovie;
 }
 
 // Fetch movie from TMDB API
@@ -214,10 +224,9 @@ async function FindMovie() {
     try {
         const response = await fetch(url);
         const data = await response.json();
-        const randomIndex = Math.floor(Math.random() * data.results.length);
-        const randomlySelectedMovie = data.results[randomIndex];
+        const randomlySelectedMovie = getRandomMovieFromList(data.results);
+
         displayMovieInformation(randomlySelectedMovie);
-        getBackdrop(randomlySelectedMovie.backdrop_path);
         console.log(data.results);
         console.log(data.results[randomIndex]);
         console.log("Title: " + randomlySelectedMovie.title);
